@@ -1,38 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Righteous&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary-orange: #FF6B00; --dark-grey: #1A1A1B; --light-grey: #333335; --text-white: #EEEEEE; }
-        body { margin: 0; background-color: var(--dark-grey); font-family: 'Montserrat', sans-serif; color: var(--text-white); overflow-x: hidden; }
-        .bg-glow { position: fixed; top: 50%; left: 50%; width: 400px; height: 400px; background: var(--primary-orange); filter: blur(150px); opacity: 0.15; z-index: -1; transform: translate(-50%, -50%); }
-        nav { padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Righteous', cursive; font-size: 2rem; color: var(--primary-orange); text-transform: uppercase; }
-        .hero { height: 80vh; display: flex; align-items: center; justify-content: space-around; padding: 0 10%; perspective: 1000px; }
-        .content h1 { font-size: 5rem; font-weight: 900; line-height: 1; text-transform: uppercase; }
-        .content span { color: var(--primary-orange); }
-        .image-container { position: relative; width: 350px; height: 450px; background: var(--light-grey); border-radius: 20px; transform-style: preserve-3d; transition: transform 0.5s ease; box-shadow: 20px 20px 50px rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; }
-        .image-container:hover { transform: rotateY(15deg) rotateX(10deg); }
-        .image-container img { width: 90%; border-radius: 15px; transform: translateZ(50px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
-        .btn { display: inline-block; margin-top: 2rem; padding: 15px 40px; background: var(--primary-orange); color: white; text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; }
-        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255, 107, 0, 0.5); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbix Agency</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#1c1c1c;
+    color:white;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:#111;
+    border-bottom:2px solid #ff6a00;
+}
+
+.logo{
+    font-family:'Orbitron', sans-serif;
+    font-size:28px;
+    font-weight:800;
+    color:#ff6a00;
+}
+
+nav a{
+    color:#ccc;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ff6a00;
+}
+
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 10%;
+    background:linear-gradient(135deg,#1c1c1c 60%,#2a2a2a 40%);
+}
+
+.hero h1{
+    font-family:'Orbitron', sans-serif;
+    font-size:55px;
+    font-weight:800;
+    color:#ff6a00;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#aaa;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:12px 30px;
+    background:#ff6a00;
+    border:none;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    border-radius:5px;
+}
+
+.btn:hover{
+    background:#ff8c42;
+    transform:scale(1.05);
+}
+
+.services{
+    padding:80px 10%;
+    background:#222;
+    text-align:center;
+}
+
+.services h2{
+    font-family:'Orbitron', sans-serif;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#ff6a00;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#2d2d2d;
+    padding:30px;
+    width:300px;
+    border-radius:15px;
+    transition:0.4s;
+    box-shadow:0 15px 35px rgba(0,0,0,0.6);
+}
+
+.card:hover{
+    transform:translateY(-15px) rotateX(5deg);
+    box-shadow:0 25px 50px rgba(255,106,0,0.4);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:20px;
+    transition:0.4s;
+}
+
+.card img:hover{
+    transform:scale(1.05) rotateY(8deg);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#ff6a00;
+}
+
+.card p{
+    color:#bbb;
+    font-size:14px;
+}
+
+footer{
+    padding:30px;
+    text-align:center;
+    background:#111;
+    border-top:2px solid #ff6a00;
+    color:#888;
+}
+</style>
 </head>
+
 <body>
-    <div class="bg-glow"></div>
-    <nav><div class="logo">PORTFOLIO</div></nav>
-    <section class="hero">
-        <div class="content">
-            <h1>STAY<br><span>BOLD.</span></h1>
-            <p>Welcome to my unique 3D portfolio space.</p>
-            <a href="#" class="btn">VIEW PROJECTS</a>
+
+<header>
+    <div class="logo">ORBIX.AGENCY</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>We Build Powerful Digital Experiences</h1>
+        <p>Heavy, Bold & Modern Web Design Agency Focused on Impact.</p>
+        <button class="btn">Get Started</button>
+    </div>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+            <h3>Web Design</h3>
+            <p>High-impact modern websites designed to dominate your niche.</p>
         </div>
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1593642532400-2682810df593?q=80&w=500" alt="3D Visual">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a" alt="">
+            <h3>Brand Identity</h3>
+            <p>Strong visual systems that make your brand unforgettable.</p>
         </div>
-    </section>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="">
+            <h3>UI/UX Design</h3>
+            <p>Clean user-focused digital products with premium feel.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Orbix Agency — All Rights Reserved
+</footer>
+
 </body>
 </html>
